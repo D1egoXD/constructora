@@ -16,7 +16,7 @@
     <section class="card">
       <h2>Imagen de la Tabla de Transporte</h2>
       <div class="mapa-mental">
-        <img src="img/transporte.png" alt="Tabla de Transporte" />
+        <img src="img/trasporte2.png" alt="Tabla de Transporte" />
       </div>
     </section>
 
@@ -43,7 +43,7 @@
         <li><strong>Tipo:</strong> Tipo de vehículo (camión, grúa, camioneta).</li>
         <li><strong>Capacidad:</strong> Capacidad de carga.</li>
         <li><strong>Estado:</strong> Condición actual (operativo, mantenimiento, fuera de servicio).</li>
-        <li><strong>Responsable:</strong> Persona encargada del vehículo.</li>
+        <li><strong>ID_Responsable:</strong> Persona encargada del vehículo.</li>
         <li><strong>Ubicacion:</strong> Lugar donde se encuentra el vehículo.</li>
       </ul>
     </section>
@@ -59,45 +59,37 @@
       <h2>Código SQL para Crear la Tabla</h2>
       <pre>
 CREATE TABLE Transporte (
-    ID_Vehiculo INT PRIMARY KEY,
-    Tipo VARCHAR(50) NOT NULL,
-    Capacidad VARCHAR(50),
-    Estado VARCHAR(50),
-    Responsable VARCHAR(100),
-    Ubicacion VARCHAR(100)
+    ID_Vehiculo INT PRIMARY KEY IDENTITY(1,1),
+    Tipo NVARCHAR(100),
+    Capacidad NVARCHAR(100),
+    Estado NVARCHAR(50),
+    ID_Responsable INT,
+    Ubicacion NVARCHAR(255),
+    CONSTRAINT FK_Transporte_Responsable FOREIGN KEY (ID_Responsable) REFERENCES Trabajadores(ID_Trabajador) ON DELETE SET NULL
 );
+GO
       </pre>
     </section>
 
     <section class="card">
       <h2>Código SQL para Insertar Registros</h2>
       <pre>
-INSERT INTO Transporte (ID_Vehiculo, Tipo, Capacidad, Estado, Responsable, Ubicacion)
+INSERT INTO Transporte (Tipo, Capacidad, Estado, ID_Responsable, Ubicacion)
 VALUES
-(1, 'Camión de volteo', '15 toneladas', 'Operativo', 'Juan Pérez', 'Patio 1'),
-(2, 'Grúa', '20 toneladas', 'Mantenimiento', 'Carlos Ruiz', 'Taller'),
-(3, 'Camioneta', '1.5 toneladas', 'Operativo', 'Luis García', 'Bodega A'),
-(4, 'Tráiler', '30 toneladas', 'Operativo', 'María López', 'Patio 2'),
-(5, 'Retroexcavadora', '10 toneladas', 'Fuera de servicio', 'José Hernández', 'Patio 3');
+('Camión de Volteo', '14 m³', 'Disponible', 5, 'Estacionamiento Principal'),
+('Camioneta de Carga Ford F-150', '1 Tonelada', 'En ruta', 8, 'Ruta al Proyecto Zafiro'),
+('Camión revolvedor (Olla)', '8 m³', 'Disponible', 5, 'Estacionamiento Principal'),
+('Grúa Móvil Grove GMK4100L', '100 Toneladas', 'En uso', 12, 'Proyecto Plaza Sol');
+
+GO
       </pre>
     </section>
 
     <section class="card">
-      <h2>Registros de la Tabla</h2>
-      <table class="tabla">
-        <thead>
-          <tr>
-            <th>ID_Vehiculo</th><th>Tipo</th><th>Capacidad</th><th>Estado</th><th>Responsable</th><th>Ubicación</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>Camión de volteo</td><td>15 toneladas</td><td>Operativo</td><td>Juan Pérez</td><td>Patio 1</td></tr>
-          <tr><td>2</td><td>Grúa</td><td>20 toneladas</td><td>Mantenimiento</td><td>Carlos Ruiz</td><td>Taller</td></tr>
-          <tr><td>3</td><td>Camioneta</td><td>1.5 toneladas</td><td>Operativo</td><td>Luis García</td><td>Bodega A</td></tr>
-          <tr><td>4</td><td>Tráiler</td><td>30 toneladas</td><td>Operativo</td><td>María López</td><td>Patio 2</td></tr>
-          <tr><td>5</td><td>Retroexcavadora</td><td>10 toneladas</td><td>Fuera de servicio</td><td>José Hernández</td><td>Patio 3</td></tr>
-        </tbody>
-      </table>
+      <h2>Imagen de la Tabla de Transporte</h2>
+      <div class="mapa-mental">
+        <img src="img/registro_trasporte.png" alt="Tabla de Transporte" />
+      </div>
     </section>
 
     <p><a href="transporte.html">⬅ Regresar al subsistema de Transporte</a></p>

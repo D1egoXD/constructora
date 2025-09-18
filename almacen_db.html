@@ -67,62 +67,38 @@
       <h2>Código SQL para Crear la Tabla</h2>
       <pre>
 CREATE TABLE Almacen (
-    ID_Producto INT PRIMARY KEY,
-    Nombre VARCHAR(100) NOT NULL,
-    Tipo VARCHAR(50) NOT NULL,
-    Cantidad INT NOT NULL,
-    Estado VARCHAR(50),
-    Ubicacion VARCHAR(100),
-    Proveedor VARCHAR(100)
+    ID_Producto_Maquinaria INT PRIMARY KEY IDENTITY(1,1),
+    Nombre NVARCHAR(150) NOT NULL,
+    Tipo NVARCHAR(50) NOT NULL, -- 'Material' o 'Maquinaria'
+    Cantidad INT NOT NULL DEFAULT 0,
+    Estado NVARCHAR(100),
+    Ubicacion NVARCHAR(255),
+    ID_Proveedor INT,
+    CONSTRAINT FK_Almacen_Proveedores FOREIGN KEY (ID_Proveedor) REFERENCES Proveedores(ID_Proveedor) ON DELETE SET NULL
 );
+GO
       </pre>
     </section>
 
     <section class="card">
       <h2>Código SQL para Insertar Registros</h2>
       <pre>
-INSERT INTO Almacen (ID_Producto, Nombre, Tipo, Cantidad, Estado, Ubicacion, Proveedor)
+INSERT INTO Almacen (Nombre, Tipo, Cantidad, Estado, Ubicacion, ID_Proveedor)
 VALUES
-(1, 'Cemento gris', 'Material', 500, 'Nuevo', 'Bodega A', 'Cemex'),
-(2, 'Varilla 3/8', 'Material', 300, 'Nuevo', 'Bodega B', 'Ternium'),
-(3, 'Excavadora CAT 320', 'Maquinaria', 2, 'Operativo', 'Patio 1', 'Caterpillar'),
-(4, 'Andamios metálicos', 'Material', 50, 'Usado', 'Bodega C', 'Andamios MX'),
-(5, 'Camión de volteo', 'Maquinaria', 1, 'En mantenimiento', 'Taller', 'Kenworth');
+('Cemento Cruz Azul 50kg', 'Material', 200, 'Disponible', 'Bodega A-1', 1),
+('Varilla de Acero 1/2"', 'Material', 500, 'Disponible', 'Patio Exterior', 2),
+('Retroexcavadora Caterpillar 420F2', 'Maquinaria', 1, 'En mantenimiento', 'Taller Central', 3),
+('Compactadora tipo Bailarina', 'Maquinaria', 2, 'En uso', 'Proyecto Plaza Sol', 4);
+
+GO
       </pre>
     </section>
 
-    <section class="card">
-      <h2>Registros de la Tabla</h2>
-      <table class="tabla">
-        <thead>
-          <tr>
-            <th>ID_Producto</th>
-            <th>Nombre</th>
-            <th>Tipo</th>
-            <th>Cantidad</th>
-            <th>Estado</th>
-            <th>Ubicación</th>
-            <th>Proveedor</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td><td>Cemento gris</td><td>Material</td><td>500</td><td>Nuevo</td><td>Bodega A</td><td>Cemex</td>
-          </tr>
-          <tr>
-            <td>2</td><td>Varilla 3/8</td><td>Material</td><td>300</td><td>Nuevo</td><td>Bodega B</td><td>Ternium</td>
-          </tr>
-          <tr>
-            <td>3</td><td>Excavadora CAT 320</td><td>Maquinaria</td><td>2</td><td>Operativo</td><td>Patio 1</td><td>Caterpillar</td>
-          </tr>
-          <tr>
-            <td>4</td><td>Andamios metálicos</td><td>Material</td><td>50</td><td>Usado</td><td>Bodega C</td><td>Andamios MX</td>
-          </tr>
-          <tr>
-            <td>5</td><td>Camión de volteo</td><td>Maquinaria</td><td>1</td><td>En mantenimiento</td><td>Taller</td><td>Kenworth</td>
-          </tr>
-        </tbody>
-      </table>
+<section class="card">
+      <h2>Imagen de la Tabla de Almacén</h2>
+      <div class="mapa-mental">
+        <img src="img/registro_almacen.png" alt="Tabla de Almacén" />
+      </div>
     </section>
 
     <p><a href="almacen.html">⬅ Regresar al subsistema de Almacén</a></p>
