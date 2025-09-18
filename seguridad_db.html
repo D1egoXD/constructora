@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Base de Datos - Seguridad</title>
+  <link rel="stylesheet" href="Styles/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Base de Datos del Subsistema de Seguridad</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Imagen de la Tabla de Seguridad</h2>
+      <div class="mapa-mental">
+        <img src="img/seguridad.png" alt="Tabla de Seguridad" />
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Pertinencia de la Arquitectura de la Base de Datos</h2>
+      <p>
+        La arquitectura del subsistema de Seguridad es pertinente porque permite llevar 
+        el control de los reportes de inspección y medidas preventivas en la obra, garantizando 
+        un ambiente seguro para los trabajadores.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Propósito</h2>
+      <p>
+        Su propósito es centralizar la información de inspecciones, reportes y proyectos asignados a 
+        ingenieros de seguridad, para mejorar la prevención de accidentes y el cumplimiento de normativas.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Campos de la Tabla</h2>
+      <ul>
+        <li><strong>ID_Reporte:</strong> Identificador único del reporte.</li>
+        <li><strong>Ingeniero:</strong> Nombre del ingeniero responsable.</li>
+        <li><strong>Proyecto:</strong> Proyecto en el que se realiza la inspección.</li>
+        <li><strong>Fecha:</strong> Fecha del reporte.</li>
+        <li><strong>Descripcion:</strong> Observaciones sobre seguridad e higiene.</li>
+        <li><strong>Estado:</strong> Estado del reporte (Pendiente, Resuelto, En seguimiento).</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Normalización</h2>
+      <h3>1NF:</h3><p>Todos los valores son atómicos, sin listas ni repeticiones en campos.</p>
+      <h3>2NF:</h3><p>Todos los atributos dependen completamente de la clave primaria (ID_Reporte).</p>
+      <h3>3NF:</h3><p>No existen dependencias transitivas entre atributos.</p>
+    </section>
+
+    <section class="card">
+      <h2>Código SQL para Crear la Tabla</h2>
+      <pre>
+CREATE TABLE Seguridad (
+    ID_Reporte INT PRIMARY KEY,
+    Ingeniero VARCHAR(100) NOT NULL,
+    Proyecto VARCHAR(100) NOT NULL,
+    Fecha DATE NOT NULL,
+    Descripcion TEXT,
+    Estado VARCHAR(50)
+);
+      </pre>
+    </section>
+
+    <section class="card">
+      <h2>Código SQL para Insertar Registros</h2>
+      <pre>
+INSERT INTO Seguridad (ID_Reporte, Ingeniero, Proyecto, Fecha, Descripcion, Estado)
+VALUES
+(1, 'Ana Martínez', 'Edificio A', '2025-01-10', 'Inspección de cascos y arneses', 'Resuelto'),
+(2, 'Pedro López', 'Planta Industrial', '2025-02-05', 'Se detectaron áreas sin señalización', 'Pendiente'),
+(3, 'Laura Torres', 'Conjunto Habitacional', '2025-02-20', 'Revisión de equipo de seguridad contra incendios', 'En seguimiento'),
+(4, 'Miguel Sánchez', 'Edificio B', '2025-03-01', 'Uso inadecuado de maquinaria sin EPP', 'Pendiente'),
+(5, 'Ana Martínez', 'Carretera Federal', '2025-03-15', 'Reporte de accidente menor en excavación', 'Resuelto');
+      </pre>
+    </section>
+
+    <section class="card">
+      <h2>Registros de la Tabla</h2>
+      <table class="tabla">
+        <thead>
+          <tr>
+            <th>ID_Reporte</th><th>Ingeniero</th><th>Proyecto</th><th>Fecha</th><th>Descripción</th><th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Ana Martínez</td><td>Edificio A</td><td>2025-01-10</td><td>Inspección de cascos y arneses</td><td>Resuelto</td></tr>
+          <tr><td>2</td><td>Pedro López</td><td>Planta Industrial</td><td>2025-02-05</td><td>Se detectaron áreas sin señalización</td><td>Pendiente</td></tr>
+          <tr><td>3</td><td>Laura Torres</td><td>Conjunto Habitacional</td><td>2025-02-20</td><td>Revisión de equipo de seguridad contra incendios</td><td>En seguimiento</td></tr>
+          <tr><td>4</td><td>Miguel Sánchez</td><td>Edificio B</td><td>2025-03-01</td><td>Uso inadecuado de maquinaria sin EPP</td><td>Pendiente</td></tr>
+          <tr><td>5</td><td>Ana Martínez</td><td>Carretera Federal</td><td>2025-03-15</td><td>Reporte de accidente menor en excavación</td><td>Resuelto</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <p><a href="seguridad.html">⬅ Regresar al subsistema de Seguridad</a></p>
+  </main>
+</body>
+</html>

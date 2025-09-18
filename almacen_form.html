@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Formulario - Almacén</title>
+  <link rel="stylesheet" href="Styles/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Formulario de Registro - Almacén</h1>
+    </div>
+  </header>
+
+  <main class="container card">
+    <h2>Registrar Material o Maquinaria</h2>
+    <form action="#" method="post" class="formulario">
+      <label for="id">ID Producto/Maquinaria:</label>
+      <input type="text" id="id" name="id" required />
+
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="tipo">Tipo:</label>
+      <select id="tipo" name="tipo">
+        <option value="material">Material</option>
+        <option value="maquinaria">Maquinaria</option>
+      </select>
+
+      <label for="cantidad">Cantidad:</label>
+      <input type="number" id="cantidad" name="cantidad" required />
+
+      <label for="estado">Estado:</label>
+      <input type="text" id="estado" name="estado" />
+
+      <label for="ubicacion">Ubicación:</label>
+      <input type="text" id="ubicacion" name="ubicacion" />
+
+      <label for="proveedor">Proveedor:</label>
+      <input type="text" id="proveedor" name="proveedor" />
+
+      <button type="submit" class="btn">Registrar</button>
+    </form>
+
+    <p><a href="almacen.html">⬅ Regresar al subsistema de Almacén</a></p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Base de Datos - Almacén</title>
+  <link rel="stylesheet" href="Styles/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Base de Datos del Subsistema de Almacén</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Imagen de la Tabla de Almacén</h2>
+      <div class="mapa-mental">
+        <img src="img/almacen.png" alt="Tabla de Almacén" />
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Pertinencia de la Arquitectura de la Base de Datos</h2>
+      <p>
+        La arquitectura de la base de datos del Almacén es pertinente porque organiza la información 
+        de materiales y maquinaria de manera estructurada, permitiendo un acceso rápido y seguro a los registros. 
+        Esta estructura facilita la integración con otros subsistemas como Finanzas y Proveedores.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Propósito</h2>
+      <p>
+        El propósito de esta base de datos es mantener un control preciso de los materiales y maquinaria 
+        disponibles en la constructora, asegurando disponibilidad en los proyectos y reduciendo pérdidas 
+        por mala administración.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Campos de la Tabla</h2>
+      <ul>
+        <li><strong>ID_Producto:</strong> Identificador único de cada material o maquinaria.</li>
+        <li><strong>Nombre:</strong> Nombre del recurso.</li>
+        <li><strong>Tipo:</strong> Clasificación como material o maquinaria.</li>
+        <li><strong>Cantidad:</strong> Número de unidades disponibles.</li>
+        <li><strong>Estado:</strong> Condición del recurso (nuevo, usado, dañado).</li>
+        <li><strong>Ubicacion:</strong> Lugar físico donde se encuentra el recurso.</li>
+        <li><strong>Proveedor:</strong> Proveedor del recurso.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Normalización de la Base de Datos</h2>
+      <h3>Primera Forma Normal (1NF)</h3>
+      <p>Todas las columnas contienen valores atómicos, sin listas o datos repetidos en un mismo campo.</p>
+
+      <h3>Segunda Forma Normal (2NF)</h3>
+      <p>Todos los campos dependen de la clave primaria (ID_Producto), evitando dependencias parciales.</p>
+
+      <h3>Tercera Forma Normal (3NF)</h3>
+      <p>No existen dependencias transitivas: los datos de proveedores se podrían normalizar en una tabla aparte, evitando redundancia.</p>
+    </section>
+
+    <section class="card">
+      <h2>Código SQL para Crear la Tabla</h2>
+      <pre>
+CREATE TABLE Almacen (
+    ID_Producto INT PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+    Tipo VARCHAR(50) NOT NULL,
+    Cantidad INT NOT NULL,
+    Estado VARCHAR(50),
+    Ubicacion VARCHAR(100),
+    Proveedor VARCHAR(100)
+);
+      </pre>
+    </section>
+
+    <section class="card">
+      <h2>Código SQL para Insertar Registros</h2>
+      <pre>
+INSERT INTO Almacen (ID_Producto, Nombre, Tipo, Cantidad, Estado, Ubicacion, Proveedor)
+VALUES
+(1, 'Cemento gris', 'Material', 500, 'Nuevo', 'Bodega A', 'Cemex'),
+(2, 'Varilla 3/8', 'Material', 300, 'Nuevo', 'Bodega B', 'Ternium'),
+(3, 'Excavadora CAT 320', 'Maquinaria', 2, 'Operativo', 'Patio 1', 'Caterpillar'),
+(4, 'Andamios metálicos', 'Material', 50, 'Usado', 'Bodega C', 'Andamios MX'),
+(5, 'Camión de volteo', 'Maquinaria', 1, 'En mantenimiento', 'Taller', 'Kenworth');
+      </pre>
+    </section>
+
+    <section class="card">
+      <h2>Registros de la Tabla</h2>
+      <table class="tabla">
+        <thead>
+          <tr>
+            <th>ID_Producto</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Cantidad</th>
+            <th>Estado</th>
+            <th>Ubicación</th>
+            <th>Proveedor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td><td>Cemento gris</td><td>Material</td><td>500</td><td>Nuevo</td><td>Bodega A</td><td>Cemex</td>
+          </tr>
+          <tr>
+            <td>2</td><td>Varilla 3/8</td><td>Material</td><td>300</td><td>Nuevo</td><td>Bodega B</td><td>Ternium</td>
+          </tr>
+          <tr>
+            <td>3</td><td>Excavadora CAT 320</td><td>Maquinaria</td><td>2</td><td>Operativo</td><td>Patio 1</td><td>Caterpillar</td>
+          </tr>
+          <tr>
+            <td>4</td><td>Andamios metálicos</td><td>Material</td><td>50</td><td>Usado</td><td>Bodega C</td><td>Andamios MX</td>
+          </tr>
+          <tr>
+            <td>5</td><td>Camión de volteo</td><td>Maquinaria</td><td>1</td><td>En mantenimiento</td><td>Taller</td><td>Kenworth</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <p><a href="almacen.html">⬅ Regresar al subsistema de Almacén</a></p>
+  </main>
+</body>
+</html>

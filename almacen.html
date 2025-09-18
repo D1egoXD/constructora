@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>Almacén - Sistema Constructora</title>
+  <title>Subsistema de Almacén</title>
   <link rel="stylesheet" href="Styles/style.css" />
 </head>
 <body>
@@ -11,24 +11,66 @@
       <h1>Subsistema de Almacén</h1>
     </div>
   </header>
-  <main class="container card">
-    <h2>Descripción</h2>
-    <p>
-      El subsistema de almacén gestiona el inventario de materiales y maquinaria.
-      Permite registrar, consultar y actualizar cantidades, estados y ubicaciones
-      de los recursos disponibles.
-    </p>
 
-    <h2>Campos principales</h2>
-    <ul>
-      <li>ID Producto/Maquinaria</li>
-      <li>Nombre</li>
-      <li>Tipo (material / maquinaria)</li>
-      <li>Cantidad</li>
-      <li>Estado</li>
-      <li>Ubicación</li>
-      <li>Proveedor</li>
-    </ul>
+  <main class="container">
+    <section class="card">
+      <h2>Descripción</h2>
+      <p>
+        El subsistema de Almacén permite administrar de forma organizada el inventario de materiales y maquinaria de la constructora. 
+        Facilita el control de cantidades, estados y ubicaciones, evitando pérdidas y asegurando que los recursos estén disponibles para los proyectos.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Usuarios del subsistema</h2>
+      <ul>
+        <li>Gerente</li>
+        <li>Supervisor / Ingeniero Civil</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Requerimientos por usuario</h2>
+
+      <h3>Requerimientos del Gerente</h3>
+      <ul>
+        <li>Registrar materiales y maquinaria.</li>
+        <li>Actualizar cantidades, estado y ubicación de los recursos.</li>
+        <li>Eliminar registros de productos o maquinaria en desuso.</li>
+      </ul>
+
+      <h3>Requerimientos del Supervisor / Ingeniero Civil</h3>
+      <ul>
+        <li>Consultar el inventario de materiales y maquinaria.</li>
+        <li>Actualizar únicamente las cantidades disponibles.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Diseño de la base de datos del subsistema</h2>
+      <p>
+        El diseño de la base de datos del Almacén incluye los campos: 
+        <em>ID Producto/Maquinaria, Nombre, Tipo (material/maquinaria), Cantidad, Estado, Ubicación, Proveedor</em>.
+      </p>
+      <p>
+        <a class="btn" href="almacen_db.html">Ver información de la Base de Datos ➝</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Formulario</h2>
+      <p>
+        Para registrar nuevos materiales o maquinaria en el sistema, utilice el siguiente formulario:
+      </p>
+      <p>
+        <a class="btn" href="almacen_form.html">Ir al Formulario ➝</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Responsable del subsistema</h2>
+      <p><strong>Diego Lozano Camargo</strong> (230110530@itsoeh.edu.mx)</p>
+    </section>
 
     <p><a href="index.html">⬅ Regresar a la página principal</a></p>
   </main>

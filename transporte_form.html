@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Formulario - Transporte</title>
+  <link rel="stylesheet" href="Styles/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Formulario de Registro - Transporte</h1>
+    </div>
+  </header>
+
+  <main class="container card">
+    <h2>Registrar Vehículo</h2>
+    <form action="#" method="post" class="formulario">
+      <label for="id">ID Vehículo:</label>
+      <input type="text" id="id" name="id" required />
+
+      <label for="tipo">Tipo:</label>
+      <input type="text" id="tipo" name="tipo" required />
+
+      <label for="capacidad">Capacidad:</label>
+      <input type="text" id="capacidad" name="capacidad" />
+
+      <label for="estado">Estado:</label>
+      <select id="estado" name="estado">
+        <option value="Operativo">Operativo</option>
+        <option value="Mantenimiento">Mantenimiento</option>
+        <option value="Fuera de servicio">Fuera de servicio</option>
+      </select>
+
+      <label for="responsable">Responsable:</label>
+      <input type="text" id="responsable" name="responsable" />
+
+      <label for="ubicacion">Ubicación:</label>
+      <input type="text" id="ubicacion" name="ubicacion" />
+
+      <button type="submit" class="btn">Registrar Vehículo</button>
+    </form>
+
+    <p><a href="transporte.html">⬅ Regresar al subsistema de Transporte</a></p>
+  </main>
+</body>
+</html>

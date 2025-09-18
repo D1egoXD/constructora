@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Base de Datos - Transporte</title>
+  <link rel="stylesheet" href="Styles/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Base de Datos del Subsistema de Transporte</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Imagen de la Tabla de Transporte</h2>
+      <div class="mapa-mental">
+        <img src="img/transporte.png" alt="Tabla de Transporte" />
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Pertinencia de la Arquitectura de la Base de Datos</h2>
+      <p>
+        La arquitectura de la base de datos de Transporte es pertinente porque organiza y centraliza la información de los vehículos y su estado. 
+        Esto facilita la administración de la flota, asegurando que los recursos estén disponibles y en condiciones para los proyectos.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Propósito</h2>
+      <p>
+        Su propósito es gestionar de forma eficiente los vehículos de transporte de materiales y maquinaria, 
+        incluyendo disponibilidad, estado y responsables asignados.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Campos de la Tabla</h2>
+      <ul>
+        <li><strong>ID_Vehiculo:</strong> Identificador único del vehículo.</li>
+        <li><strong>Tipo:</strong> Tipo de vehículo (camión, grúa, camioneta).</li>
+        <li><strong>Capacidad:</strong> Capacidad de carga.</li>
+        <li><strong>Estado:</strong> Condición actual (operativo, mantenimiento, fuera de servicio).</li>
+        <li><strong>Responsable:</strong> Persona encargada del vehículo.</li>
+        <li><strong>Ubicacion:</strong> Lugar donde se encuentra el vehículo.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Normalización</h2>
+      <h3>1NF:</h3><p>Todos los valores son atómicos, sin listas en un solo campo.</p>
+      <h3>2NF:</h3><p>Todos los campos dependen de la clave primaria (ID_Vehiculo).</p>
+      <h3>3NF:</h3><p>No hay dependencias transitivas; información del responsable puede normalizarse en otra tabla.</p>
+    </section>
+
+    <section class="card">
+      <h2>Código SQL para Crear la Tabla</h2>
+      <pre>
+CREATE TABLE Transporte (
+    ID_Vehiculo INT PRIMARY KEY,
+    Tipo VARCHAR(50) NOT NULL,
+    Capacidad VARCHAR(50),
+    Estado VARCHAR(50),
+    Responsable VARCHAR(100),
+    Ubicacion VARCHAR(100)
+);
+      </pre>
+    </section>
+
+    <section class="card">
+      <h2>Código SQL para Insertar Registros</h2>
+      <pre>
+INSERT INTO Transporte (ID_Vehiculo, Tipo, Capacidad, Estado, Responsable, Ubicacion)
+VALUES
+(1, 'Camión de volteo', '15 toneladas', 'Operativo', 'Juan Pérez', 'Patio 1'),
+(2, 'Grúa', '20 toneladas', 'Mantenimiento', 'Carlos Ruiz', 'Taller'),
+(3, 'Camioneta', '1.5 toneladas', 'Operativo', 'Luis García', 'Bodega A'),
+(4, 'Tráiler', '30 toneladas', 'Operativo', 'María López', 'Patio 2'),
+(5, 'Retroexcavadora', '10 toneladas', 'Fuera de servicio', 'José Hernández', 'Patio 3');
+      </pre>
+    </section>
+
+    <section class="card">
+      <h2>Registros de la Tabla</h2>
+      <table class="tabla">
+        <thead>
+          <tr>
+            <th>ID_Vehiculo</th><th>Tipo</th><th>Capacidad</th><th>Estado</th><th>Responsable</th><th>Ubicación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Camión de volteo</td><td>15 toneladas</td><td>Operativo</td><td>Juan Pérez</td><td>Patio 1</td></tr>
+          <tr><td>2</td><td>Grúa</td><td>20 toneladas</td><td>Mantenimiento</td><td>Carlos Ruiz</td><td>Taller</td></tr>
+          <tr><td>3</td><td>Camioneta</td><td>1.5 toneladas</td><td>Operativo</td><td>Luis García</td><td>Bodega A</td></tr>
+          <tr><td>4</td><td>Tráiler</td><td>30 toneladas</td><td>Operativo</td><td>María López</td><td>Patio 2</td></tr>
+          <tr><td>5</td><td>Retroexcavadora</td><td>10 toneladas</td><td>Fuera de servicio</td><td>José Hernández</td><td>Patio 3</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <p><a href="transporte.html">⬅ Regresar al subsistema de Transporte</a></p>
+  </main>
+</body>
+</html>

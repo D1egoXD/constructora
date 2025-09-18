@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Formulario - Seguridad</title>
+  <link rel="stylesheet" href="Styles/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Formulario de Registro - Seguridad</h1>
+    </div>
+  </header>
+
+  <main class="container card">
+    <h2>Registrar Reporte de Seguridad</h2>
+    <form action="#" method="post" class="formulario">
+      <label for="id">ID Reporte:</label>
+      <input type="text" id="id" name="id" required />
+
+      <label for="ingeniero">Ingeniero:</label>
+      <input type="text" id="ingeniero" name="ingeniero" required />
+
+      <label for="proyecto">Proyecto:</label>
+      <input type="text" id="proyecto" name="proyecto" required />
+
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" name="fecha" required />
+
+      <label for="descripcion">Descripción:</label>
+      <textarea id="descripcion" name="descripcion"></textarea>
+
+      <label for="estado">Estado:</label>
+      <select id="estado" name="estado">
+        <option value="Pendiente">Pendiente</option>
+        <option value="En seguimiento">En seguimiento</option>
+        <option value="Resuelto">Resuelto</option>
+      </select>
+
+      <button type="submit" class="btn">Registrar Reporte</button>
+    </form>
+
+    <p><a href="seguridad.html">⬅ Regresar al subsistema de Seguridad</a></p>
+  </main>
+</body>
+</html>
