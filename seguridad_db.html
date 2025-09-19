@@ -2,28 +2,28 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>Base de Datos - Seguros</title>
+  <title>Base de Datos - Seguridad</title>
   <link rel="stylesheet" href="Styles/style.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container">
-      <h1>Base de Datos del Subsistema de Seguros</h1>
+      <h1>Base de Datos del Subsistema de Seguridad</h1>
     </div>
   </header>
 
   <main class="container">
     <section class="card">
-      <h2>Imagen de la Tabla de Seguros</h2>
+      <h2>Imagen de la Tabla de Seguridad</h2>
       <div class="mapa-mental">
-        <img src="img/seguridad2.png" alt="Tabla de Seguros" />
+        <img src="img/seguridad2.png" alt="Tabla de Seguridad" />
       </div>
     </section>
 
     <section class="card">
       <h2>Pertinencia de la Arquitectura de la Base de Datos</h2>
       <p>
-        La arquitectura del subsistema de Seguros es pertinente porque permite llevar 
+        La arquitectura del subsistema de Seguridad es pertinente porque permite llevar 
         un control ordenado de los reportes realizados por los ingenieros en cada proyecto, 
         facilitando la identificación de riesgos y medidas preventivas.
       </p>
@@ -32,7 +32,7 @@
     <section class="card">
       <h2>Propósito</h2>
       <p>
-        El propósito de esta tabla es registrar los reportes de Seguros de cada ingeniero asociados 
+        El propósito de esta tabla es registrar los reportes de Seguridad de cada ingeniero asociados 
         a proyectos específicos, garantizando un historial confiable y accesible.
       </p>
     </section>
@@ -40,10 +40,10 @@
     <section class="card">
       <h2>Campos de la Tabla</h2>
       <ul>
-        <li><strong>ID_Registro_Seguros:</strong> Identificador único de cada reporte de Seguros.</li>
+        <li><strong>ID_Registro_Seguridad:</strong> Identificador único de cada reporte de Seguridad.</li>
         <li><strong>ID_Ingeniero:</strong> Identificador del ingeniero responsable del reporte.</li>
         <li><strong>ID_Proyecto:</strong> Identificador del proyecto donde se genera el reporte.</li>
-        <li><strong>Reportes_Seguros:</strong> Descripción detallada de observaciones o incidencias encontradas.</li>
+        <li><strong>Reportes_Seguridad:</strong> Descripción detallada de observaciones o incidencias encontradas.</li>
       </ul>
     </section>
 
@@ -57,13 +57,13 @@
     <section class="card">
       <h2>Código SQL para Crear la Tabla</h2>
       <pre>
-CREATE TABLE SSeguros (
-    ID_Registro_Seguros INT PRIMARY KEY IDENTITY(1,1),
+CREATE TABLE Seguridad (
+    ID_Registro_Seguridad INT PRIMARY KEY IDENTITY(1,1),
     ID_Ingeniero INT NOT NULL, -- Referencia al trabajador con puesto de Ing. de Seguros
     ID_Proyecto INT NOT NULL,
-    Reportes_Seguros NVARCHAR(MAX),
-    CONSTRAINT FK_Seguros_Ingeniero FOREIGN KEY (ID_Ingeniero) REFERENCES Trabajadores(ID_Trabajador) ON DELETE CASCADE,
-    CONSTRAINT FK_Seguros_Proyecto FOREIGN KEY (ID_Proyecto) REFERENCES Proyectos(ID_Proyecto) ON DELETE CASCADE
+    Reportes_Seguridad NVARCHAR(MAX),
+    CONSTRAINT FK_Seguridad_Ingeniero FOREIGN KEY (ID_Ingeniero) REFERENCES Trabajadores(ID_Trabajador) ON DELETE CASCADE,
+    CONSTRAINT FK_Seguridad_Proyecto FOREIGN KEY (ID_Proyecto) REFERENCES Proyectos(ID_Proyecto) ON DELETE CASCADE
 );
 GO
       </pre>
@@ -72,11 +72,11 @@ GO
     <section class="card">
       <h2>Código SQL para Insertar Registros</h2>
       <pre>
-INSERT INTO Seguros (ID_Ingeniero, ID_Proyecto, Reportes_Seguros)
+INSERT INTO Seguridad (ID_Ingeniero, ID_Proyecto, Reportes_Seguridad)
 VALUES
 (10, 1, 'Reporte Semanal 1: Se verificó el uso correcto de EPP (Equipo de Protección Personal). No se reportaron incidentes. Se recomienda reforzar señalización en área de excavación.'),
 (10, 1, 'Reporte Semanal 2: Incidente menor reportado: caída de herramienta desde un andamio sin consecuencias. Se realizó capacitación de aseguramiento de herramientas.'),
-(10, 2, 'Reporte Inicial de Obra: Se establecieron los protocolos de Seguros y las rutas de evacuación. Se realizó inspección de maquinaria y equipo.'),
+(10, 2, 'Reporte Inicial de Obra: Se establecieron los protocolos de Seguridad y las rutas de evacuación. Se realizó inspección de maquinaria y equipo.'),
 (3, 3, 'Reporte de Inspección: Se detectó falta de barandales en el segundo nivel. Se detuvo la actividad en la zona hasta su correcta instalación.');
 
 GO
@@ -84,13 +84,13 @@ GO
     </section>
 
     <section class="card">
-      <h2>Imagen de la Tabla de Seguros</h2>
+      <h2>Imagen de la Tabla de Seguridad</h2>
       <div class="mapa-mental">
         <img src="img/registro_seguridad.png" alt="Tabla de Seguridad" />
       </div>
     </section>
 
-    <p><a href="seguridad.html">⬅ Regresar al subsistema de Seguros</a></p>
+    <p><a href="seguridad.html">⬅ Regresar al subsistema de Seguridad</a></p>
   </main>
 </body>
 </html>

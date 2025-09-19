@@ -16,7 +16,7 @@
     <section class="card">
       <h2>Imagen de la Tabla de Almacén</h2>
       <div class="mapa-mental">
-        <img src="img/almacen.png" alt="Tabla de Almacén" />
+        <img src="img/almacen3.png" alt="Tabla de Almacén" />
       </div>
     </section>
 
@@ -77,18 +77,33 @@ CREATE TABLE Almacen (
     CONSTRAINT FK_Almacen_Proveedores FOREIGN KEY (ID_Proveedor) REFERENCES Proveedores(ID_Proveedor) ON DELETE SET NULL
 );
 GO
+
+ALTER TABLE Almacen
+ADD ID_Trabajador INT NULL;
+GO
+
+-- Crea la relación (llave foránea) con la tabla Trabajadores
+ALTER TABLE Almacen
+ADD CONSTRAINT FK_Almacen_Trabajadores
+FOREIGN KEY (ID_Trabajador) REFERENCES Trabajadores(ID_Trabajador);
+GO
+
       </pre>
     </section>
 
     <section class="card">
       <h2>Código SQL para Insertar Registros</h2>
       <pre>
-INSERT INTO Almacen (Nombre, Tipo, Cantidad, Estado, Ubicacion, ID_Proveedor)
+INSERT INTO Almacen (Nombre, Tipo, Cantidad, Estado, Ubicacion, ID_Proveedor, ID_Trabajador)
 VALUES
-('Cemento Cruz Azul 50kg', 'Material', 200, 'Disponible', 'Bodega A-1', 1),
-('Varilla de Acero 1/2"', 'Material', 500, 'Disponible', 'Patio Exterior', 2),
-('Retroexcavadora Caterpillar 420F2', 'Maquinaria', 1, 'En mantenimiento', 'Taller Central', 3),
-('Compactadora tipo Bailarina', 'Maquinaria', 2, 'En uso', 'Proyecto Plaza Sol', 4);
+('Cemento Cruz Azul 50kg', 'Material', 200, 'Disponible', 'Bodega A-1', 1, NULL),
+('Varilla de Acero 1/2"', 'Material', 500, 'Disponible', 'Patio Exterior', 2, NULL),
+('Ladrillo Rojo Recocido', 'Material', 10000, 'Disponible', 'Bodega B-2', 1, NULL),
+('Arena de Río por m³', 'Material', 50, 'En uso', 'Proyecto Residencial Zafiro', NULL, NULL),
+('Retroexcavadora Caterpillar 420F2', 'Maquinaria', 1, 'En mantenimiento', 'Taller Central', 3, NULL),
+('Revolvedora de Concreto Cipsa', 'Maquinaria', 3, 'Disponible', 'Bodega de Maquinaria', NULL, NULL),
+('Compactadora tipo Bailarina', 'Maquinaria', 2, 'En uso', 'Proyecto Plaza Sol', 4, NULL),
+('Juego de Andamios Metálicos', 'Maquinaria', 20, 'Disponible', 'Bodega C-4', NULL, 7); -- Registro asignado al Almacenista
 
 GO
       </pre>
@@ -97,7 +112,7 @@ GO
 <section class="card">
       <h2>Imagen de la Tabla de Almacén</h2>
       <div class="mapa-mental">
-        <img src="img/registro_almacen.png" alt="Tabla de Almacén" />
+        <img src="img/registro_alm2.png" alt="Tabla de Almacén" />
       </div>
     </section>
 
