@@ -79,10 +79,9 @@ CREATE TABLE Almacen (
 GO
 
 ALTER TABLE Almacen
-ADD ID_Trabajador INT NULL;
+ALTER COLUMN ID_Trabajador INT NOT NULL;
 GO
 
--- Crea la relación (llave foránea) con la tabla Trabajadores
 ALTER TABLE Almacen
 ADD CONSTRAINT FK_Almacen_Trabajadores
 FOREIGN KEY (ID_Trabajador) REFERENCES Trabajadores(ID_Trabajador);
@@ -96,14 +95,14 @@ GO
       <pre>
 INSERT INTO Almacen (Nombre, Tipo, Cantidad, Estado, Ubicacion, ID_Proveedor, ID_Trabajador)
 VALUES
-('Cemento Cruz Azul 50kg', 'Material', 200, 'Disponible', 'Bodega A-1', 1, NULL),
-('Varilla de Acero 1/2"', 'Material', 500, 'Disponible', 'Patio Exterior', 2, NULL),
-('Ladrillo Rojo Recocido', 'Material', 10000, 'Disponible', 'Bodega B-2', 1, NULL),
-('Arena de Río por m³', 'Material', 50, 'En uso', 'Proyecto Residencial Zafiro', NULL, NULL),
-('Retroexcavadora Caterpillar 420F2', 'Maquinaria', 1, 'En mantenimiento', 'Taller Central', 3, NULL),
-('Revolvedora de Concreto Cipsa', 'Maquinaria', 3, 'Disponible', 'Bodega de Maquinaria', NULL, NULL),
-('Compactadora tipo Bailarina', 'Maquinaria', 2, 'En uso', 'Proyecto Plaza Sol', 4, NULL),
-('Juego de Andamios Metálicos', 'Maquinaria', 20, 'Disponible', 'Bodega C-4', NULL, 7); -- Registro asignado al Almacenista
+('Cemento Cruz Azul 50kg', 'Material', 200, 'Disponible', 'Bodega A-1', 1, 7),
+('Varilla de Acero 1/2"', 'Material', 500, 'Disponible', 'Patio Exterior', 2, 7),
+('Ladrillo Rojo Recocido', 'Material', 10000, 'Disponible', 'Bodega B-2', 1, 7),
+('Arena de Río por m³', 'Material', 50, 'En uso', 'Proyecto Residencial Zafiro', 2, 7),
+('Retroexcavadora Caterpillar 420F2', 'Maquinaria', 1, 'En mantenimiento', 'Taller Central', 3, 5),
+('Revolvedora de Concreto Cipsa', 'Maquinaria', 3, 'Disponible', 'Bodega de Maquinaria', 1, 5),
+('Compactadora tipo Bailarina', 'Maquinaria', 2, 'En uso', 'Proyecto Plaza Sol', 4, 5),
+('Juego de Andamios Metálicos', 'Maquinaria', 20, 'Disponible', 'Bodega C-4', 4, 7);
 
 GO
       </pre>
@@ -112,7 +111,7 @@ GO
 <section class="card">
       <h2>Imagen de la Tabla de Almacén</h2>
       <div class="mapa-mental">
-        <img src="img/registro_alm2.png" alt="Tabla de Almacén" />
+        <img src="img/registro_alm3.png" alt="Tabla de Almacén" />
       </div>
     </section>
 
