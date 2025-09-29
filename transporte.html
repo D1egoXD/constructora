@@ -16,9 +16,9 @@
     <section class="card">
       <h2>Descripción</h2>
       <p>
-        El subsistema de Transporte gestiona la flota de vehículos y maquinaria de la constructora. 
-        Permite llevar el control del tipo de vehículo, su capacidad, estado y responsable asignado, 
-        asegurando la disponibilidad de transporte en cada proyecto.
+        El subsistema de Transporte gestiona la flota de vehículos de la constructora, 
+        lo cual permite llevar un control del tipo de vehículo, su capacidad, estado y responsable 
+        asignado, asegurando así la disponibilidad de transporte para cada proyecto.
       </p>
     </section>
 
@@ -34,15 +34,23 @@
       <h2>Requerimientos por usuario</h2>
       <h3>Requerimientos del Gerente de Transporte</h3>
       <ul>
-        <li>Registrar vehículos en el sistema.</li>
-        <li>Actualizar estado, capacidad y responsable asignado.</li>
-        <li>Eliminar vehículos que ya no estén en uso.</li>
+        <li>Consultar disponibilidad de vehículos: El gerente debe ser capaz de consultar los campos 
+           ID_Vehiculo, Tipo y Estado.</li>
+        <li>Registrar vehículos en el sistema: El gerente debe ser capaz de registrar los campos 
+            ID_Vehiculo, Tipo, Capacidad, Estado, ID_Responsable y Ubicacion.</li>
+        <li>Actualizar estado, capacidad y responsable asignado: El gerente debe ser capaz de 
+            actualizar los campos Estado, Capacidad e ID_Responsable, utilizando el ID_Vehiculo 
+            para identificar el vehículo.</li>
+        <li>Eliminar vehículos que ya no estén en uso: El gerente debe ser capaz de eliminar un vehículo 
+            utilizando el campo ID_Vehiculo para identificarlo.</li>
       </ul>
 
       <h3>Requerimientos del Supervisor</h3>
       <ul>
-        <li>Consultar disponibilidad de vehículos.</li>
-        <li>Visualizar responsables y ubicaciones.</li>
+        <li>Consultar disponibilidad de vehículos: El supervisor debe ser capaz de consultar los campos 
+           ID_Vehiculo, Tipo y Estado.</li>
+        <li>Visualizar responsables y ubicaciones: El supervisor debe ser capaz de visualizar los campos
+            ID_Responsable y Ubicacion, utilizando el ID_Vehiculo para identificar el vehículo.</li>
       </ul>
     </section>
 
