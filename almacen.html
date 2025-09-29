@@ -34,20 +34,24 @@
       <h2>Requerimientos por usuario</h2>
 
       <h3>Requerimientos del Gerente</h3>
-      <p>
-        El grenete debe sercapas de:
-      </p>
+
       <ul>
-        <li>Consultar el inventario de materiales y maquinaria.</li>
-        <li>Registrar materiales y maquinaria.</li>
-        <li>Actualizar cantidades, estado y ubicación de los recursos.</li>
-        <li>Eliminar registros de productos o maquinaria en desuso.</li>
+        <li>Consultar el inventario de materiales y maquinaria: El gerente debe ser capaz 
+            de consultar los campos ID_Producto, Nombre, Tipo, Cantidad, Estado, Ubicacion y Proveedor.</li>
+        <li>Registrar materiales y maquinaria: El gerente debe ser capaz de registrar los campos ID_Producto, 
+            Nombre, Tipo, Cantidad, Estado, Ubicacion y Proveedor.</li>
+        <li>Actualizar cantidades, estado y ubicación de los recursos: El gerente debe ser capaz de actualizar 
+            los campos Cantidad, Estado y Ubicacion, utilizando el ID_Producto para identificar el recurso.</li>
+        <li>Eliminar registros de productos o maquinaria en desuso: El gerente debe ser capaz de eliminar un 
+            registro utilizando el campo ID_Producto para identificarlo.</li>
       </ul>
 
       <h3>Requerimientos del Supervisor / Ingeniero Civil</h3>
       <ul>
-        <li>Consultar el inventario de materiales y maquinaria.</li>
-        <li>Actualizar únicamente las cantidades disponibles.</li>
+        <li>Consultar el inventario de materiales y maquinaria: El supervisor debe ser capaz de consultar los campos 
+            ID_Producto, Nombre, Tipo, Cantidad, Estado, Ubicacion y Proveedor.</li>
+        <li>Actualizar únicamente las cantidades disponibles: El supervisor debe ser capaz de actualizar el campo Cantidad, 
+            utilizando el ID_Producto para identificar el recurso.</li>
       </ul>
     </section>
 
